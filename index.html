@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JPAI-棋牌女神【福宝】</title>
+    <style>
+        :root {
+            --primary-blue: #4471cc;
+            --bg-gradient: linear-gradient(135deg, #eef2f7 0%, #dfe6e9 100%);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(168, 180, 194, 0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .avatar-container {
+            position: relative;
+        }
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #4471cc;
+        }
+        .name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d3748;
+        }
+        .notice-box {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 16px;
+            padding: 16px;
+            color: #e53e3e;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .id-box {
+            background: linear-gradient(145deg, #4d79d6, #3b65be);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(59, 101, 190, 0.2);
+        }
+        .id-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .btn-copy {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+        .btn-copy:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #4471cc, #3b65be);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(59, 101, 190, 0.25);
+            transition: all 0.2s;
+        }
+        .btn-action:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 8px rgba(59, 101, 190, 0.2);
+        }
+        .guide-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4a5568;
+            margin: 24px 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            pointer-events: none;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="header">
+            <div class="avatar-container">
+                <img src="step3.png" alt="头像" class="avatar">
+            </div>
+            <div class="name">JPAI-棋牌女神【福宝】</div>
+        </div>
+
+        <div class="notice-box">
+            添加 JPAI-棋牌女神【福宝】充值每笔立享 5% 优惠；专属美女客服为您提供优质服务，优先办理各类业务，尊享专属特权！
+        </div>
+
+        <div class="id-box">
+            <div class="id-text">JPAI ID: 301301</div>
+            <button class="btn-copy" onclick="copyId()">复制 📋</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 5px;">
+            <a href="https://www.jpai.one/home" class="btn-action">下载JPAI 📥</a>
+            <a href="JpaiApp://" class="btn-action">点击打开JPAI ↗️</a>
+        </div>
+
+        <div class="guide-title">💡 操作指引</div>
+        <div class="guide-box" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 100%; margin: 0 auto;">
+            <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+                <span style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0;">步骤 1</span>
+                <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                    <img src="step1.png" alt="点击添加好友" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                </div>
+            </div>
+            <div class="guide-step" style="display: flex; flex-direction: column; height: 260px; background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #eee; position: relative;">
+                <span style="background: rgba(0,0,0,0.6); color: #fff; padding: 4px 8px; font-size: 11px; position: absolute; top: 0; left: 0; z-index: 10; border-radius: 0 0 8px 0;">步骤 2</span>
+                <div style="flex: 1; width: 100%; height: 100%; overflow: hidden;">
+                    <img src="step2.png" alt="粘贴并搜索" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">复制成功，去添加好友吧！</div>
+
+    <script>
+        function copyId() {
+            const idText = "301301";
+            navigator.clipboard.writeText(idText).then(() => {
+                showToast();
+            }).catch(() => {
+                const textArea = document.createElement("textarea");
+                textArea.value = idText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                } catch (err) {
+                    alert('复制失败，请手动长按复制 ID');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
